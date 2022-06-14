@@ -38,7 +38,7 @@ def url():
     if url:
         try:
             yt = Youtube('https://youtube.com/watch?v=' + url)
-            title = yt.title + yt.description
+            title = yt.title
             res = make_predict([title], model)
             return render_template('output.html', output=[title,res])
         except:
